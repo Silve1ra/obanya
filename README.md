@@ -1,4 +1,4 @@
-# palinovic
+# Obanya (Online Image Classifier)
 
 ## Project setup
 ```
