@@ -14,7 +14,10 @@
     "@tensorflow/tfjs-node-gpu": "^2.6.0",
     "@vue/babel-preset-jsx": "^1.2.2",
     "babel-preset-vue": "^2.0.2",
+    "bootstrap": "^4.5.3",
     "core-js": "^3.6.5",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
     "sass": "^1.27.0",
     "sass-loader": "^10.0.3",
     "vue": "^2.6.11",
@@ -28,6 +31,8 @@
     "babel-preset-vue-app": "^2.0.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
+    "sass": "^1.19.0",
+    "sass-loader": "^8.0.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {

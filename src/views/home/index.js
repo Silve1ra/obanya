@@ -51,10 +51,12 @@ export default {
         <div class="classifier__image">
           <img id="output_image" />
           <button onclick={() => this.classify()}>Classify</button>
+          
         </div>
 
         <div class="classifier__results" id="output_res"></div>
-      </div>
+        <button type="button" class="btn btn-primary">Primary</button>
+    </div>
     );
   }
 }
