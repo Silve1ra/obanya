@@ -27,9 +27,15 @@ export default {
 
       // Make a prediction through the model on our image
       const imgEl = document.getElementById('output_image');
-      const result = await this.model.classify(imgEl);
-      console.log(result);
-    }
+      const results = await this.model.classify(imgEl);
+      console.log(results);
+
+      const res = results.map(res => {
+        return(`pred: ${res.className} - acc: ${res.probability}`)
+      });
+
+      document.getElementById('output_res').innerHTML = res;
+    },
   },
 
   render(h) {
@@ -46,6 +52,8 @@ export default {
           <img id="output_image" />
           <button onclick={() => this.classify()}>Classify</button>
         </div>
+
+        <div class="classifier__results" id="output_res"></div>
       </div>
     );
   }

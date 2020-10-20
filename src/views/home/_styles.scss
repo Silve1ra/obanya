@@ -39,8 +39,13 @@
       padding: 8px;
       background: white;
       border-radius: 6px;
-    }
+    } 
   }
 
-  
+  &__results {
+    margin-top: 20px;
+    border: 2px solid rgb(218, 215, 215);
+    height: 100px;
+    width: 400px;
+  }
 }
