@@ -1,4 +1,4 @@
-import "./_styles.scss"
+import "./_styles.scss";
 
 export default {
   name: "Home",
@@ -30,33 +30,43 @@ export default {
       const results = await this.model.classify(imgEl);
       console.log(results);
 
-      const res = results.map(res => {
-        return(`pred: ${res.className} - acc: ${res.probability}`)
-      });
+      let ul = document.getElementById('output_res');
 
-      document.getElementById('output_res').innerHTML = res;
+      // Display the results
+      results.forEach(res => {
+        let li = document.createElement('li');
+        li.innerText = `pred: ${res.className} - acc: ${res.probability}`;
+        ul.append(li);
+      });
     },
   },
 
   render(h) {
     return (
-      <div class="classifier">
-        <h1>Online Image Classifier</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-auto">
+            <h2 class="ml-3">Image</h2>
+            <div class="row">
+              <p>Please, upload an image</p>
+            </div>
+            <div class="row">
+              <input type="file" accept="image/*" onchange={(event) => this.uploadImage(event)}/>
+            </div>
+            <div class="row">
+              <img id="output_image" width="400" height="400" maxlength="10"/><br></br>
+            </div>
+            <div class="row">
+              <button onclick={() => this.classify()}>Classify</button>
+            </div>
+          </div>
 
-        <div class="classifier__input">
-          <p>Please, upload an image</p>
-          <input type="file" accept="image/*" onchange={(event) => this.uploadImage(event)}></input>
+          <div class="col-md-auto">
+            <h2 class="ml-3">Predictions</h2>
+            <ol id="output_res"></ol>
+          </div>
         </div>
-
-        <div class="classifier__image">
-          <img id="output_image" />
-          <button onclick={() => this.classify()}>Classify</button>
-          
-        </div>
-
-        <div class="classifier__results" id="output_res"></div>
-        <button type="button" class="btn btn-primary">Primary</button>
-    </div>
+      </div>
     );
   }
 }
