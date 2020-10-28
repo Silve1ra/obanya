@@ -11,21 +11,14 @@ export default {
     tfClassifierMixin, 
     pollenClassifierMixin
   ],
+  components: {
+    VImageCard: () => import("@/components/VImageCard")
+  },
   data: () => ({
     images: [],
     classifier: "generic"
   }),
   methods: {
-    uploadImage(event) {
-      var reader = new FileReader();
-
-      reader.onload = () => {
-        var output = document.getElementById('output_image');
-        output.src = reader.result;
-      };
-
-      reader.readAsDataURL(event.target.files[0]);
-    },
     selectClassifier() {
       var selectBox = document.getElementById("selected-classifier");
       var selectedValue = selectBox.options[selectBox.selectedIndex].value;
@@ -41,16 +34,7 @@ export default {
       <div class="container">
         <div class="row">
           <div class="col-md-auto">
-            <h2 class="ml-3">Image</h2>
-            <div class="row">
-              <p>Please, upload an image</p>
-            </div>
-            <div class="row">
-              <input type="file" accept="image/*" onchange={(event) => this.uploadImage(event)}/>
-            </div>
-            <div class="row">
-              <img id="output_image" width="400" height="400" maxlength="10"/><br></br>
-            </div>
+            <VImageCard/>
             <div class="row">
             <select id="selected-classifier" class="btn btn-light" onchange={() => this.selectClassifier()}>
               <option value="generic">Generic</option>

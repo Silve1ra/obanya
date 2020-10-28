@@ -41,7 +41,7 @@ export default {
         }).sort((a,b) => {
           return b.probability - a.probability;
         });
-      console.log(results);
+      console.log("image classified ...");
 
       let ul = document.getElementById('output_res');
       results.forEach(res => {
@@ -49,8 +49,6 @@ export default {
         li.innerText = `pred: ${res.className} - acc: ${res.probability}`;
         ul.append(li);
       });
-
-      console.log("classification finished");
     }
   }
 }
