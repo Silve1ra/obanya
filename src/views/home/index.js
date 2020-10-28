@@ -10,15 +10,16 @@ export default {
     images: [],
     CLASSES: {
       0: "Anadenanthera",
-      1: "Protium",
+      1: "Myrcia",
       2: "Arecaceae",
       3: "Cecropia",
       4: "Poaceae",
-      5: "Serjania",
-      6: "Myrcia",
-      7: "Schinus",
+      5: "Protium",
+      6: "Schinus",
+      7: "Serjania",
       8: "Syagrus"
     },
+    classifier: "generic"
   }),
   methods: {
     uploadImage(event) {
@@ -31,29 +32,29 @@ export default {
 
       reader.readAsDataURL(event.target.files[0]);
     },
-    // async classify() {
-    //   const mobilenet = require('@tensorflow-models/mobilenet');
-    //   console.log('Successfully loaded mobilenet');
+    async generenicClassify() {
+      const mobilenet = require('@tensorflow-models/mobilenet');
+      console.log('Successfully loaded mobilenet');
 
-    //   // Load the model
-    //   this.model = await mobilenet.load();
-    //   console.log('Successfully loaded model');
+      // Load the model
+      this.model = await mobilenet.load();
+      console.log('Successfully loaded model');
 
-    //   // Make a prediction through the model on our image
-    //   const imgEl = document.getElementById('output_image');
-    //   const results = await this.model.classify(imgEl);
-    //   console.log(results);
+      // Make a prediction through the model on our image
+      const imgEl = document.getElementById('output_image');
+      const results = await this.model.classify(imgEl);
+      console.log(results);
 
-    //   let ul = document.getElementById('output_res');
+      let ul = document.getElementById('output_res');
 
-    //   // Display the results
-    //   results.forEach(res => {
-    //     let li = document.createElement('li');
-    //     li.innerText = `pred: ${res.className} - acc: ${res.probability}`;
-    //     ul.append(li);
-    //   });
-    // },
-    async classify() {
+      // Display the results
+      results.forEach(res => {
+        let li = document.createElement('li');
+        li.innerText = `pred: ${res.className} - acc: ${res.probability}`;
+        ul.append(li);
+      });
+    },
+    async pollenClassify() {
       console.log("starting ...");
 
       const model = await tf.loadLayersModel(MODEL_PATH);
@@ -94,6 +95,11 @@ export default {
       });
 
       console.log("classification finished")
+    },
+    selectClassifier() {
+      var selectBox = document.getElementById("selected-classifier");
+      var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+      this.classifier = selectedValue;
     }
   },
 
@@ -113,7 +119,11 @@ export default {
               <img id="output_image" width="400" height="400" maxlength="10"/><br></br>
             </div>
             <div class="row">
-              <button onclick={() => this.classify()}>Classify</button>
+            <select id="selected-classifier" class="btn btn-light" onchange={() => this.selectClassifier()}>
+              <option value="generic">Generic</option>
+              <option value="pollen">Pollen</option>
+            </select>
+              <button class="btn btn-outline-primary" onclick={() => this.classifier == "generic" ? this.generenicClassify() : this.pollenClassify()}>Classify</button>
             </div>
           </div>
 
