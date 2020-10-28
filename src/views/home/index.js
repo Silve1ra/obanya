@@ -12,7 +12,8 @@ export default {
     pollenClassifierMixin
   ],
   components: {
-    VImageCard: () => import("@/components/VImageCard")
+    VImageCard: () => import("@/components/VImageCard"),
+    VPredictions: () => import("@/components/VPredictions")
   },
   data: () => ({
     images: [],
@@ -34,7 +35,9 @@ export default {
       <div class="container">
         <div class="row">
           <div class="col-md-auto">
+
             <VImageCard/>
+
             <div class="row">
             <select id="selected-classifier" class="btn btn-light" onchange={() => this.selectClassifier()}>
               <option value="generic">Generic</option>
@@ -44,10 +47,8 @@ export default {
             </div>
           </div>
 
-          <div class="col-md-auto">
-            <h2 class="ml-3">Predictions</h2>
-            <ol id="output_res"></ol>
-          </div>
+          <VPredictions/>
+          
         </div>
       </div>
     );
