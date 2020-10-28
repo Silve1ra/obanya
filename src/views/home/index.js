@@ -35,20 +35,19 @@ export default {
       <div class="container">
         <div class="row">
           <div class="col-md-auto">
-
             <VImageCard/>
-
             <div class="row">
-            <select id="selected-classifier" class="btn btn-light" onchange={() => this.selectClassifier()}>
-              <option value="generic">Generic</option>
-              <option value="pollen">Pollen</option>
-            </select>
+              <select id="selected-classifier" class="btn btn-light" onchange={() => this.selectClassifier()}>
+                <option value="generic">Generic</option>
+                <option value="pollen">Pollen</option>
+              </select>
               <button class="btn btn-outline-primary" onclick={() => this.classifier == "generic" ? tfClassifier.classify() : pollenClassifier.classify(MODEL_PATH)}>Classify</button>
             </div>
           </div>
 
-          <VPredictions/>
-          
+          <div class="col-md-auto">
+            <VPredictions/>
+          </div>
         </div>
       </div>
     );
