@@ -2,9 +2,9 @@ import * as tf from '@tensorflow/tfjs';
 
 const CLASSES = {
   0: "Anadenanthera",
-  1: "Myrcia",
-  2: "Arecaceae",
-  3: "Cecropia",
+  1: "Arecaceae",
+  2: "Cecropia",
+  3: "Myrcia",
   4: "Poaceae",
   5: "Protium",
   6: "Schinus",
@@ -40,13 +40,14 @@ export default {
           }
         }).sort((a,b) => {
           return b.probability - a.probability;
-        });
+        }).slice(0,1);
       console.log("image classified ...");
 
       let ul = document.getElementById('output_res');
       results.forEach(res => {
         let li = document.createElement('li');
-        li.innerText = `pred: ${res.className} - acc: ${res.probability}`;
+        // li.innerText = `${res.className} - accuracy: ${res.probability}`;
+        li.innerText = `name: ${res.className}`;
         ul.append(li);
       });
     }
