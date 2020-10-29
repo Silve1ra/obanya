@@ -18,24 +18,22 @@ export default {
   }),
   render(h) {
     return (
-      <v-container>
-        <v-carousel
-          show-arrows={false}
-        >
-          {
-            this.items.map((item, i) => {
-              return (
-                <v-carousel-item
-                  key={i}
-                  src={item.src}
-                  reverse-transition="fade-transition"
-                  transition="fade-transition"
-                ></v-carousel-item>
-              );
-            })
-          }
-        </v-carousel>
-      </v-container>
+      <v-carousel
+        show-arrows={false}
+      >
+        {
+          this.items.map((item, i) => {
+            return (
+              <v-carousel-item
+                key={i}
+                src={item.src}
+                reverse-transition="fade-transition"
+                transition="fade-transition"
+              ></v-carousel-item>
+            );
+          })
+        }
+      </v-carousel>
     );
   }
 }
