@@ -1,12 +1,14 @@
 export default {
   name: "Home",
   components: {
-    VCarouselImg: () => import("@/components/VCarouselImg")
+    Carousel: () => import("@/components/Carousel"),
+    Toolbar: () => import("@/components/Toolbar")
   },
   render(h) {
     return(
       <div>
-        <VCarouselImg/>
+        <Toolbar/>
+        <Carousel/>
       </div>
     );
   }

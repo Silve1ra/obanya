@@ -1,5 +1,5 @@
 export default {
-  name: "VPredictions",
+  name: "Predictions",
   render(h) {
     return (
       <div class="col-md-auto">

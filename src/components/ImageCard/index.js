@@ -1,5 +1,5 @@
 export default {
-  name: "VImageCard",
+  name: "ImageCard",
   methods: {
     uploadImage(event) {
       var reader = new FileReader();

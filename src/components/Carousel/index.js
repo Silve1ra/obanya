@@ -1,5 +1,5 @@
 export default {
-  name: "VCarouselImg",
+  name: "Carousel",
   data: () => ({
     items: [
       {
