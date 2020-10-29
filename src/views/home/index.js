@@ -1,10 +1,13 @@
-import VCarousel from "../../components/VCarousel";
-
 export default {
   name: "Home",
+  components: {
+    VCarouselImg: () => import("@/components/VCarouselImg")
+  },
   render(h) {
-    return (
-      <div>oi</div>
+    return(
+      <div>
+        <VCarouselImg/>
+      </div>
     );
   }
-}
+};
