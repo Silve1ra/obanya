@@ -1,3 +1,5 @@
+import "./_styles.scss";
+
 export default {
   name: "Footer",
   data: () => ({
@@ -14,6 +16,7 @@ export default {
       <v-app>
         <v-footer
           padless
+          class="footer"
         >
           <v-row
             justify="center"

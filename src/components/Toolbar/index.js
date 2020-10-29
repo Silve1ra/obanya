@@ -1,8 +1,11 @@
+import "./_styles.scss";
+
 export default {
   name: "Toolbar",
   render(h) {
     return(
       <v-card
+        class="toolbar"
         color="grey lighten-4"
         flat
         tile
