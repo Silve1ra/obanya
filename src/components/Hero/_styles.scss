@@ -1,0 +1,31 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.content span {
+  text-transform: uppercase;
+  display: block;
+}
+
+.title {
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin-top: 62px;
+  color: #52796f;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #cad2c5;
+}
+
+.content-info {
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 42px;
+  width: 37%;
+  color: #354f52;
+}

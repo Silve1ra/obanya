@@ -1,20 +1,21 @@
+import "./_styles.scss";
+
 export default {
   name: "Hero",
   render(h) {
     return(
       <div>
-        <v-container>
-          <v-row>
-            <v-col align="center">Palinovic</v-col>
-          </v-row>
-        </v-container>
-        <v-container>
-          <v-row>
-            <v-col align="center">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores, rem?
-            </v-col>
-          </v-row>
-        </v-container>
+        <div class="content">
+          <span class="title">
+            Palinovic
+          </span>
+          <span class="subtitle">
+            Obanya Edition
+          </span>
+          <div class="content-info">
+            Obanya App is destinated to help biologists, botanics, palynologysts and so on, to automatically classify, detect and count pollen grains through images 
+          </div>
+        </div>
       </div>
     );
   }

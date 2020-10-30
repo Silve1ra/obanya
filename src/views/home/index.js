@@ -1,4 +1,4 @@
-import InfoSection from "../../components/InfoSection";
+import "./_styles.scss";
 
 export default {
   name: "Home",
@@ -11,11 +11,13 @@ export default {
   },
   render(h) {
     return(
-      <div>
-        <Toolbar/>
-        <Carousel/>
-        <Hero/>
-        <InfoSection/>
+      <div class="home">
+        <div class="home-content">
+          <Toolbar/>
+          <Carousel/>
+          <Hero/>
+          <InfoSection/>
+        </div>
         <Footer/>
       </div>
     );

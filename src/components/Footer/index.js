@@ -2,49 +2,29 @@ import "./_styles.scss";
 
 export default {
   name: "Footer",
-  data: () => ({
-    links: [
-      {name: 'Home'},
-      {name: 'About us'},
-      {name: 'Work'},
-      {name: 'Info'},
-      {name: 'Obanya'}
-    ],
-  }),
   render(h) {
     return (
-      <v-app>
-        <v-footer
-          padless
-          class="footer"
+      <v-footer
+        padless
+        class="footer"
+        color="#354f52"
+      >
+        <v-row
+          justify="center"
+          align="center"
         >
-          <v-row
-            justify="center"
-            no-gutters
-          >
-            {this.links.map(link => {
-              return(
-                <v-btn
-                  key={link.name}
-                  color="dark"
-                  text
-                  rounded
-                  class="my-2"
-                >
-                  { link.name }
-                </v-btn>
-              );
-            })}
-            
-            <v-col
-              class="lighten-2 py-4 text-center"
-              cols="12"
+          <v-col align="center">
+            <v-btn
+              color="#52796f"
+              text
+              rounded
+              class="my-2"
             >
-              Palinovic 
-            </v-col>
-          </v-row>
-        </v-footer>
-      </v-app>
+              Palinovic - Obanya Edition - 2020
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-footer>
     );
   }
 }
