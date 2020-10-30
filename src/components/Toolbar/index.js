@@ -4,22 +4,15 @@ export default {
   name: "Toolbar",
   render(h) {
     return(
-      <v-card
-        class="toolbar"
-        color="grey lighten-4"
-        flat
-        tile
-      >
-        <v-toolbar dense flat>    
-          <v-toolbar-title>Palinovic</v-toolbar-title>
-          <v-spacer></v-spacer>
-          <v-btn text href="#">Home</v-btn>
-          <v-btn text href="#">About us</v-btn>
-          <v-btn text href="#">Work</v-btn>
-          <v-btn text href="#">Info</v-btn>
-          <v-btn text outlined href="classifier">Obanya</v-btn>
-        </v-toolbar>
-      </v-card>
+      <v-toolbar class="items" flat dark color="#31572c">    
+        <v-toolbar-title>Palinovic</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn text disabled href="#">Home</v-btn>
+        <v-btn text disabled href="#">About us</v-btn>
+        <v-btn text disabled href="#">Work</v-btn>
+        <v-btn text disabled href="#">Info</v-btn>
+        <v-btn text disabled outlined href="classifier">Obanya</v-btn>
+      </v-toolbar>
     );
   }
 }

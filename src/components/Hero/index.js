@@ -15,22 +15,6 @@ export default {
             </v-col>
           </v-row>
         </v-container>
-        <v-container>
-          <v-row>
-            <v-col>
-              Lorem ipsum dolor sit.
-            </v-col>
-            <v-col>
-              Lorem ipsum dolor sit.
-            </v-col>
-            <v-col>
-              Lorem ipsum dolor sit.
-            </v-col>
-            <v-col>
-              Lorem ipsum dolor sit.
-            </v-col>
-          </v-row>
-        </v-container>
       </div>
     );
   }
