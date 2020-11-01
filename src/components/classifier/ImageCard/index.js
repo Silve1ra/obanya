@@ -1,3 +1,5 @@
+import "./_styles.scss";
+
 export default {
   name: "ImageCard",
   methods: {
@@ -14,8 +16,7 @@ export default {
   },
   render(h) {
     return (
-      <div class="col-md-auto">
-        <h2 class="ml-3">Image</h2>
+      <div>
         <div class="row">
           <p>Please, upload an image</p>
         </div>
@@ -26,12 +27,23 @@ export default {
           Or paste an image url
         </div>
         <div class="row">
-          <input id="url-image" type="text" placeholder="https://" />
-          <button onclick={() => {
-            let imgUrl = document.getElementById("url-image").value;
-            let img = document.getElementById("output_image");
-            img.src = imgUrl;
-          }}>Load</button>
+          <v-text-field
+            id="url-image"
+            counter="100"
+            hint="PNG, JPG, JPEG ..."
+            label="https://"
+          ></v-text-field>
+          <v-btn
+            class="ma-2"
+            outlined
+            color="indigo"
+            onclick={() => {
+              let imgUrl = document.getElementById("url-image").value;
+              let img = document.getElementById("output_image");
+              img.src = imgUrl;}}
+            >
+              Load
+            </v-btn>
         </div>
         <div class="row">
           <img id="output_image" width="400" height="400" maxlength="10" crossorigin='anonymous'/><br></br>

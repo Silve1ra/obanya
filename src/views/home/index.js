@@ -3,11 +3,11 @@ import "./_styles.scss";
 export default {
   name: "Home",
   components: {
-    Toolbar: () => import("@/components/Toolbar"),
-    Carousel: () => import("@/components/Carousel"),
-    Hero: () => import("@/components/Hero"),
-    InfoSection: () => import("@/components/InfoSection"),
-    Footer: () => import("@/components/Footer")
+    Toolbar: () => import("@/components/home/Toolbar"),
+    Carousel: () => import("@/components/home/Carousel"),
+    Hero: () => import("@/components/home/Hero"),
+    InfoSection: () => import("@/components/home/InfoSection"),
+    Footer: () => import("@/components/home/Footer")
   },
   render(h) {
     return(

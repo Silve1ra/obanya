@@ -47,7 +47,7 @@ export default {
       results.forEach(res => {
         let li = document.createElement('li');
         // li.innerText = `${res.className} - accuracy: ${res.probability}`;
-        li.innerText = `name: ${res.className}`;
+        li.innerText = `prediction: ${res.className}`;
         ul.append(li);
       });
     }

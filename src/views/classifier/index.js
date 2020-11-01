@@ -12,42 +12,50 @@ export default {
     pollenClassifierMixin
   ],
   components: {
-    ImageCard: () => import("@/components/ImageCard"),
-    Predictions: () => import("@/components/Predictions")
+    ImageCard: () => import("@/components/classifier/ImageCard"),
+    Predictions: () => import("@/components/classifier/Predictions")
   },
   data: () => ({
     images: [],
-    classifier: "generic"
+    classifier: ""
   }),
-  methods: {
-    selectClassifier() {
-      var selectBox = document.getElementById("selected-classifier");
-      var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-      this.classifier = selectedValue;
-    }
-  },
-
   render(h) {
     const tfClassifier = tfClassifierMixin.methods;
     const pollenClassifier = pollenClassifierMixin.methods;
 
     return (
-      <div class="container">
-        <div class="row">
-          <div class="col-md-auto">
-            <ImageCard/>
-            <div class="row">
-              <select id="selected-classifier" class="btn btn-light" onchange={() => this.selectClassifier()}>
-                <option value="generic">Generic</option>
-                <option value="pollen">Pollen</option>
-              </select>
-              <button class="btn btn-outline-primary" onclick={() => this.classifier == "generic" ? tfClassifier.classify() : pollenClassifier.classify(MODEL_PATH)}>Classify</button>
-            </div>
-          </div>
+      <div class="classifier">
+        <div class="classifier__image">
+          <ImageCard/>
+          <div class="row">
+          <v-radio-group
+              id="selected-classifier" 
+              row
+            >
+              <v-radio
+                label="pollen"
+                value="pollen"
+                onchange={() => this.classifier="pollen"}
+              ></v-radio>
+              <v-radio
+                label="generic"
+                value="generic"
+                onchange={() => this.classifier="generic"}
+              ></v-radio>
+            </v-radio-group>
 
-          <div class="col-md-auto">
-            <Predictions/>
+            <v-btn
+              class="ma-2"
+              outlined
+              color="indigo"
+              onclick={() => this.classifier == "generic" 
+                ? tfClassifier.classify() 
+                : pollenClassifier.classify(MODEL_PATH)}
+            >
+              Classify
+            </v-btn>
           </div>
+          <Predictions/>
         </div>
       </div>
     );
