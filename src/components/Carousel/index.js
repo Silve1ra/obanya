@@ -18,6 +18,7 @@ export default {
   }),
   render(h) {
     return (
+      this.$vuetify.breakpoint.width > 400 ?
       <v-carousel
         show-arrows={false}
       >
@@ -34,6 +35,7 @@ export default {
           })
         }
       </v-carousel>
+      : ""
     );
   }
 }

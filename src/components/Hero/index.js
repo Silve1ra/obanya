@@ -12,9 +12,12 @@ export default {
           <span class="subtitle">
             Obanya Edition
           </span>
-          <div class="content-info">
+          <v-col 
+            class="content-info"
+            md="4"
+            sm="2">
             Obanya App is destinated to help biologists, botanics, palynologysts and so on, to automatically classify, detect and count pollen grains through images 
-          </div>
+          </v-col>
         </div>
       </div>
     );
