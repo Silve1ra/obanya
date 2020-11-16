@@ -27,7 +27,7 @@ export default {
               <v-btn text disabled href="#">About us</v-btn>
               <v-btn text disabled href="#">Work</v-btn>
               <v-btn text disabled href="#">Info</v-btn>
-              <v-btn text disabled outlined href="classifier">Obanya</v-btn>
+              <v-btn text outlined href="classifier">Obanya</v-btn>
             </v-toolbar-items>
           )
         }
