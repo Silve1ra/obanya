@@ -1,3 +1,2 @@
 # Redirects from what the browser requests to what we serve
-/              /
-/classifier /src/views/classifier/index.js 200
+/*          /index.html   200
