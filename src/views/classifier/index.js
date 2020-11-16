@@ -1,7 +1,7 @@
 import tfClassifierMixin from "@/services/mixins/tfClassifier";
 import pollenClassifierMixin from "@/services/mixins/pollenClassifier";
 
-const json = "http://localhost:3334/model/model.json"
+const json = "https://obanya-api.herokuapp.com/"
 
 import "./_styles.scss";
 
