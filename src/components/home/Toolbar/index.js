@@ -19,7 +19,7 @@ export default {
         {
           this.isMobile() ? (
             <div>
-              <v-btn text disabled outlined href="classifier">Obanya</v-btn>
+              <v-btn text outlined href="classifier">Obanya</v-btn>
             </div>
           ) : (
             <v-toolbar-items>
