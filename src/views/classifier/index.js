@@ -1,9 +1,9 @@
 import tfClassifierMixin from "@/services/mixins/tfClassifier";
 import pollenClassifierMixin from "@/services/mixins/pollenClassifier";
 
-import "./_styles.scss";
+const json = "http://localhost:3334/model/model.json"
 
-const MODEL_PATH = 'http://localhost:3000/model.json';
+import "./_styles.scss";
 
 export default {
   name: "Home",
@@ -17,7 +17,7 @@ export default {
   },
   data: () => ({
     images: [],
-    classifier: ""
+    classifier: "",
   }),
   render(h) {
     const tfClassifier = tfClassifierMixin.methods;
@@ -50,7 +50,7 @@ export default {
               color="indigo"
               onclick={() => this.classifier == "generic" 
                 ? tfClassifier.classify() 
-                : pollenClassifier.classify(MODEL_PATH)}
+                : pollenClassifier.classify(json)}
             >
               Classify
             </v-btn>

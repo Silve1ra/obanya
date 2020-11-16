@@ -4,6 +4,7 @@ import router from "./router";
 
 import "@/assets/styles/main.scss";
 import vuetify from './plugins/vuetify';
+
 import '@babel/polyfill'
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import '@mdi/font/css/materialdesignicons.css'
